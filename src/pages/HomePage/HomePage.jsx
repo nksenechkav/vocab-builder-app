@@ -4,7 +4,7 @@ import css from './HomePage.module.scss';
 export default function HomePage() {
   return (
     <>
-      <DocumentTitle>Home</DocumentTitle>
+      <DocumentTitle>VocabBuilder</DocumentTitle>
 
       <div className={css.container}>
         <p className={css.title}>

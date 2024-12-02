@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'MacPawFixelDisplay';
+  src: url('/fonts/MacPawFixelDisplay-Bold.otf') format('opentype');
+  font-weight: 600; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MacPawFixelDisplay';
+  src: url('/fonts/MacPawFixelDisplay-ExtraBold.otf') format('opentype');
+  font-weight: 500; /* Roman (обычный вес) */
+  font-style: normal;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1.5;
