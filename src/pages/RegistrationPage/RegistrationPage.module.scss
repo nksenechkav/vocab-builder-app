@@ -33,15 +33,13 @@
     
     @media screen and (min-width: 1158px){
       .container {
-        max-width: 1376px;
+        max-width: 1206px;
         border: none;
-        border-radius: 30px;
-        max-height: 736px;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
+        gap: 80px;
         align-items: center;
-        padding: 0;
       }
       
       .title-container {
