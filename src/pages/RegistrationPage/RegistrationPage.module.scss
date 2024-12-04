@@ -33,13 +33,35 @@
     
     @media screen and (min-width: 1158px){
       .container {
-        max-width: 1206px;
+        max-width: 1440px;
+        height: 800px;
+        padding: 20px 117px 84px 117px;
         border: none;
         margin: 0 auto;
+        align-items: center;
+        background: url('/vector.png') no-repeat ;
+        background-position: right bottom;
+      }
+
+      .main-container {
+        width: 1206px;
+        height: 592px;
         display: flex;
         flex-direction: row;
         gap: 80px;
         align-items: center;
+      }
+
+
+      .image-container {
+        width: 498px;
+        height: 435px;
+        z-index: 1;
+      }
+      
+      .image {
+        width: 100%; /* Адаптуємо розмір зображення */
+        height: auto;
       }
       
       .title-container {
@@ -100,17 +122,5 @@
         transform: rotate(0); /* Стрелка становится горизонтальной */
       }
       
-      .image-container {
-        width: 498px;
-        height: 435px;
-      }
-      
-      .image {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100%;
-      }
       
    }
