@@ -9,12 +9,10 @@ export default function RegistrationPage() {
     <>
       <DocumentTitle>Registration</DocumentTitle>
         <div className={css.container}>
-        <div className={css["main-container"]}>
             <RegistrationForm />
             <div className={css["image-container"]}>
             <img src="../../../illustration.png" alt="home" className={css.image} />
           </div>
-        </div>
         </div>
     </>
   );

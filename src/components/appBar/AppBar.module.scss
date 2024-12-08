@@ -1,41 +1,83 @@
-@media screen and (min-width: 375px) {
-  .header {
-    font-size: 12px;
-    max-width: 230px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-    border-bottom: 4px solid #2a363b;
-  }
-    }
-  @media screen and (min-width: 768px) {
+// @media screen and (min-width: 375px) {
+//   .header {
+//     font-size: 12px;
+//     max-width: 230px;
+//     margin: 0 auto;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-bottom: 16px;
+//     border-bottom: 4px solid #2a363b;
+//   }
+//     }
+//   @media screen and (min-width: 768px) {
+//     .header {
+//       font-size: 14px;
+//       max-width: 400px;
+//       margin-left: 270px;
+//       margin: 0 auto;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+//       align-items: center;
+//       margin-bottom: 30px;
+//       border-bottom: 5px solid #2a363b;
+//     }
+//     }
+  
+  @media screen and (min-width: 1158px){
     .header {
-      font-size: 14px;
-      max-width: 400px;
-      margin-left: 270px;
-      margin: 0 auto;
+      width: 1240px;
+      height: 48px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
-      border-bottom: 5px solid #2a363b;
-    }
+      flex-wrap: nowrap;
+      background-color: #FFFFFF;
+      font-size: 24px;
+      font-weight: bold;
     }
   
-  @media screen and (min-width: 1158px){
-  .header {
-    font-size: 24px;
-    max-width: 600px;
-    margin-left: 270px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-    border-bottom: 7px solid #2a363b;
-  }
+    .logo {
+      width: 214px;
+      height: 40px;
+      font-family: MacPawFixelDisplay;
+      font-size: 22px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: #FBFBFB;
+      transition: color 0.3s ease;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .icon {
+      width: 40px;
+      height: 40px;
+      fill: #fff;
+      background-color: #85AA9F;
+      border-radius: 50%;
+      padding: 8px;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    .menu {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 92px;
+    }
   }

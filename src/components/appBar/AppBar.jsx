@@ -4,14 +4,25 @@ import { useSelector } from 'react-redux';
 import { AuthNav } from '../authNav/AuthNav';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import css from './AppBar.module.scss';
+import { Link } from 'react-router-dom';
 
 export const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
     <header className={css.header}>
-      <Navigation />
+     <Link className={css["logo"]} to="/">
+     <div className={css['logo-container']}>
+          <svg className={css.icon}>
+            <use xlinkHref="/icons.svg#icon-logo-flower" />
+          </svg>
+          <span className={css['logo-text']}>VocabBuilder</span>
+        </div>
+      </Link>
+      <div className={css.menu}>
+      <Navigation className={css.navigation} />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      </div>  
     </header>
   );
 };
