@@ -103,6 +103,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: MacPawFixelDisplay;
   }
 
   .form-header {
@@ -115,7 +116,7 @@
 
   .form-text {
    width: 500px;
-   font-size: 15px;
+   font-size: 16px;
    font-weight: 400;
    color: rgba(0, 0, 0, 0.5);
    margin-bottom: 40px;
@@ -177,12 +178,27 @@
     border-radius: 30px;
     cursor: pointer;
     font-size: 18px;
-    transition: background-color 0.3s ease, border 0.3s ease;
+    transition: background-color 0.3s ease;
   }
   
   .btn:hover, .btn:focus {
-    border: solid 1px#0957C3; 
-    color: #0957C3; 
-    background-color: rgba(251, 251, 251, 0.4);
+    background-color: #A5C0B8;
+    }
+    
+    .loginLink {
+      margin-top: 15px;
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .login-link {
+      font-weight: 600;
+      color: rgba(18, 20, 23, 0.5);
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    
+      &:hover {
+        color: #121417;
+      }
   }
 }

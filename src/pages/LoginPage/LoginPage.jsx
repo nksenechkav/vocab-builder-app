@@ -1,11 +1,19 @@
+// src/pages/LoginPage/LoginPage.jsx
+
 import DocumentTitle from '../../components/DocumentTitle';
 import { LoginForm } from '../../components/loginForm/LoginForm';
+import css from './LoginPage.module.scss';
 
 export default function LoginPage() {
   return (
-    <div>
+    <>
       <DocumentTitle>Login</DocumentTitle>
-      <LoginForm />
-    </div>
+      <div className={css.container}>
+            <LoginForm />
+            <div className={css["image-container"]}>
+            <img src="../../../illustration.png" alt="home" className={css.image} />
+          </div>
+        </div>
+    </>
   );
 }

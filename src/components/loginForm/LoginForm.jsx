@@ -1,11 +1,15 @@
+// src/components/LoginForm/LoginForm.jsx
+
 import { Formik, Form, Field } from 'formik';
 import { ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useId } from 'react';
+import { useId, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/operations';
 import toast, { Toaster } from 'react-hot-toast';
 import css from './LoginForm.module.scss';
+import { RiEyeOffLine, RiEyeLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 const FeedbackSchema = Yup.object().shape({
   email: Yup.string().trim()
@@ -23,53 +27,61 @@ const FeedbackSchema = Yup.object().shape({
   })
 });
 
-export const LoginForm = () => {
+export const LoginForm = ({ onLoginSuccess }) => {
   const dispatch = useDispatch();
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
-  const handleSubmit = (values, actions) => {
+  const [showPassword, setShowPassword] = useState(false);
 
-    dispatch(
-      logIn({
-        email: values.email,
-        password: values.password,
-      })
-    )
-      .unwrap()
-      .then(() => {
-        toast.success('Login success. Congratulations!');
-      })
-      .catch(() => {
-        toast.error('Login failed. Please check your credentials!');
-      });
-      actions.resetForm();
+  // Функция для переключения видимости пароля
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
+  const handleSubmit = (values, actions) => {
+    dispatch(logIn({
+      email: values.email,
+      password: values.password,
+    }))
+      .unwrap()
+      .then(() => toast.success('Login success. Congratulations!'))
+      .catch(() => toast.error('Login failed. Please check your credentials!'));
+    actions.resetForm();
+    onLoginSuccess();
+  };
   return (
-  <Formik initialValues={{
-      id: "",
-      email: "",
-      password: ""
-    }} 
+    <Formik
+    initialValues={{ email: '', password: '' }}
     onSubmit={handleSubmit}
     validationSchema={FeedbackSchema}
-    >
+  >
     <Form className={css.form} autoComplete="off">
-
-    <div className={css["form-wrapper"]}>
-      <label className={css.label} htmlFor={emailFieldId}>Email</label>
-      <Field className={css.field} type="email" name="email" id={emailFieldId} placeholder='Enter your email...'/>
-      <ErrorMessage name="email" component="p" className={css.error} />
-    </div> 
-
-    <div className={css["form-wrapper"]}>
-      <label className={css.label} htmlFor={passwordFieldId}>Password</label>
-      <Field className={css.field} type="password" name="password" id={passwordFieldId} placeholder='Enter your password...'/>
-      <ErrorMessage name="password" component="p" className={css.error} />
-    </div>
-
-      <button className={css.btn} type="submit">Log In</button>
+    <p className={css['form-header']}>Login</p>
+    <p className={css['form-text']}>Please enter your login details to continue using our service:</p>
+      <div className={css['form-wrapper']}>
+        {/* <label className={css.label} htmlFor={emailFieldId}>Email</label> */}
+        <Field className={css.field} type="email" name="email" id={emailFieldId} placeholder="Email" autoComplete="current-email"/>
+        <ErrorMessage name="email" component="p" className={css.error} />
+      </div>
+      <div className={css['form-wrapper']}>
+        {/* <label className={css.label} htmlFor={passwordFieldId}>Password</label> */}
+        <Field className={css.field}  type={showPassword ? 'text' : 'password'} name="password" id={passwordFieldId} placeholder="Password" autoComplete="current-password"/> 
+        <button
+        type="button"
+        onClick={togglePasswordVisibility}
+        className={css['my-icon']}
+      >
+        {showPassword ? <RiEyeLine size={20} /> : <RiEyeOffLine size={20} />}
+         </button>
+        <ErrorMessage name="password" component="p" className={css.error} />
+      </div>
+      <button className={css.btn} type="submit">Login</button>
+       <p className={css.registerLink}>
+        <Link to="/register" className={css["register-link"]}>
+          Register
+        </Link>
+      </p>
       <Toaster />
     </Form>
   </Formik>

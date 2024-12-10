@@ -9,6 +9,7 @@ import { register } from '../../redux/auth/operations';
 import toast, { Toaster } from 'react-hot-toast';
 import css from './RegistrationForm.module.scss';
 import { RiEyeOffLine, RiEyeLine } from 'react-icons/ri';
+import { Link } from 'react-router-dom';
 
 
 const FeedbackSchema = Yup.object().shape({
@@ -85,6 +86,11 @@ export const RegistrationForm = () => {
         <ErrorMessage name="password" component="p" className={css.error} />
       </div>
       <button className={css.btn} type="submit">Register</button>
+      <p className={css.loginLink}>
+        <Link to="/login" className={css["login-link"]}>
+          Login
+        </Link>
+      </p>
       <Toaster />
     </Form>
   </Formik>
