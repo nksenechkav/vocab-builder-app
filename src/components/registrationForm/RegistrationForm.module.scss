@@ -105,66 +105,93 @@
     align-items: center;
     font-family: MacPawFixelDisplay;
   }
-
+  
   .form-header {
     width: 500px;
     font-size: 48px;
     font-weight: 700;
     color: rgba(0, 0, 0);
     margin-bottom: 20px;
-   }
-
-  .form-text {
-   width: 500px;
-   font-size: 20px;
-   font-weight: 400;
-   color: rgba(18, 20, 23, 0.8);
-   margin-bottom: 40px;
   }
-
+  
+  .form-text {
+    width: 500px;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 40px;
+  }
+  
   .form-wrapper {
     width: 500px;
-    position: relative; /* Устанавливаем относительное позиционирование для контейнера */
-    height: 56px; /* Фиксируем высоту, чтобы избежать смещений */
+    position: relative;
+    height: 56px;
     margin-bottom: 18px;
   }
   
   .field {
-    width: 100%; /* Занимает всю ширину */
-    height: 52px; /* Высота поля ввода */
-    padding: 16px 48px 16px 18px; /* Добавляем место справа для кнопки */
+    width: 100%;
+    height: 52px;
+    padding: 16px 48px 16px 18px;
     border: 1px solid #ccc;
     border-radius: 12px;
     outline: none;
   }
-
-  .field:hover, .field:focus {
+  
+  .field:hover,
+  .field:focus {
     outline: 1px solid #85AA9F;
   }
-  
   
   ::placeholder {
     color: rgba(18, 20, 23, 0.8);
   }
-
+  
   .my-icon {
-    position: absolute; /* Абсолютное позиционирование относительно .form-wrapper */
-    top: 50%; /* Центрирование кнопки по вертикали */
-    right: 18px; /* Отступ от правого края */
-    transform: translateY(-50%); /* Точное выравнивание по центру */
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
     cursor: pointer;
     border: none;
     background-color: transparent;
   }
   
+  .feedback {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .errorMessage,
+  .successMessage {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .errorMessage svg,
+  .successMessage svg {
+    margin-right: 6px;
+  }
+  
+  .errorMessage {
+    color: red;
+  }
+  
+  .successMessage {
+    color: green;
+  }
+  
   .error {
     display: flex;
     align-items: center;
-    color: #ff0000;
-    font-size: 12px;
+    color: red;
+    font-size: 11px;
     margin-top: 5px;
     margin-left: 5px;
-  
+
     &::before {
       content: '⚠️'; /* Иконка ошибки */
       margin-right: 5px; /* Отступ справа от иконки */
@@ -175,9 +202,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 22px;
+    margin-top: 30px;
     width: 500px;
-    height: 60px;
+    height: 55px;
     background-color: #85AA9F;
     color: #fff;
     border: none;
@@ -188,25 +215,27 @@
     transition: background-color 0.3s ease;
   }
   
-  .btn:hover, .btn:focus {
+  .btn:hover,
+  .btn:focus {
     background-color: #A5C0B8;
-    }
-    
-    .loginLink {
-      margin-top: 15px;
-      font-size: 16px;
-      text-align: center;
-    }
-    
-    .login-link {
-      font-weight: 600;
-      color: rgba(18, 20, 23, 0.5);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-      transition: color 0.3s ease;
-    
-      &:hover {
-        color: #121417;
-      }
   }
+  
+  .loginLink {
+    margin-top: 15px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .login-link {
+    font-weight: 600;
+    color: rgba(18, 20, 23, 0.5);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s ease;
+  }
+  
+  .login-link:hover {
+    color: #121417;
+  }
+  
 }

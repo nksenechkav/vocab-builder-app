@@ -156,14 +156,41 @@
     background-color: transparent;
   }
   
+  .feedback {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .errorMessage,
+  .successMessage {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .errorMessage svg,
+  .successMessage svg {
+    margin-right: 6px;
+  }
+  
+  .errorMessage {
+    color: red;
+  }
+  
+  .successMessage {
+    color: green;
+  }
+  
   .error {
     display: flex;
     align-items: center;
-    color: #ff0000;
-    font-size: 12px;
+    color: red;
+    font-size: 11px;
     margin-top: 5px;
     margin-left: 5px;
-  
+
     &::before {
       content: '⚠️'; /* Иконка ошибки */
       margin-right: 5px; /* Отступ справа от иконки */
@@ -174,9 +201,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 22px;
+    margin-top: 30px;
     width: 500px;
-    height: 60px;
+    height: 55px;
     background-color: #85AA9F;
     color: #fff;
     border: none;
