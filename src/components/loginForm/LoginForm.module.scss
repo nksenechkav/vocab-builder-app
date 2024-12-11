@@ -104,23 +104,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
   .form-header {
     width: 500px;
-    font-size: 40px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 700;
     color: rgba(0, 0, 0);
     margin-bottom: 20px;
    }
 
   .form-text {
-   width: 500px;
-   font-size: 16px;
-   font-weight: 400;
-   color: rgba(0, 0, 0, 0.5);
-   margin-bottom: 40px;
+    width: 500px;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(18, 20, 23, 0.8);
+    margin-bottom: 40px;
   }
 
   .form-wrapper {
@@ -139,6 +138,9 @@
     outline: none;
   }
   
+  .field:hover, .field:focus {
+    outline: 1px solid #85AA9F;
+  }
   
   ::placeholder {
     color: #11101C;
@@ -146,7 +148,7 @@
 
   .my-icon {
     position: absolute; /* Абсолютное позиционирование относительно .form-wrapper */
-    top: 40%; /* Центрирование кнопки по вертикали */
+    top: 50%; /* Центрирование кнопки по вертикали */
     right: 18px; /* Отступ от правого края */
     transform: translateY(-50%); /* Точное выравнивание по центру */
     cursor: pointer;
@@ -169,6 +171,9 @@
   }
   
   .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 22px;
     width: 500px;
     height: 60px;
@@ -178,7 +183,7 @@
     padding: 10px 15px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
   }
   
@@ -193,10 +198,11 @@
   }
   
   .register-link {
-    font-weight: 600;
-    color: rgba(18, 20, 23, 0.5);
-    text-decoration: underline;
-    transition: color 0.3s ease;
+      font-weight: 600;
+      color: rgba(18, 20, 23, 0.5);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      transition: color 0.3s ease;
   
     &:hover {
       color: #121417;

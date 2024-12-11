@@ -12,6 +12,7 @@ export default function LoginPage() {
             <LoginForm />
             <div className={css["image-container"]}>
             <img src="../../../illustration.png" alt="home" className={css.image} />
+            <p className={css.text}> Word <span>·</span> Translation <span>·</span> Grammar <span>·</span> Progress</p>
           </div>
         </div>
     </>
