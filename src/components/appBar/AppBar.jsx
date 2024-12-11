@@ -11,7 +11,7 @@ export const AppBar = () => {
 
   return (
     <header className={css.header}>
-     <Link className={css["logo"]} to="/">
+     <Link className={css["logo"]} to="/register">
      <div className={css['logo-container']}>
           <svg className={css.icon}>
             <use xlinkHref="/icons.svg#icon-logo-flower" />
@@ -20,8 +20,8 @@ export const AppBar = () => {
         </div>
       </Link>
       <div className={css.menu}>
-      <Navigation className={css.navigation} />
-      {isLoggedIn ? <UserMenu /> : <AuthNav />}
+      {/* <Navigation className={css.navigation} /> */}
+      {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
       </div>  
     </header>
   );
