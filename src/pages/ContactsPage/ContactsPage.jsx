@@ -10,22 +10,22 @@ import ContactForm from '../../components/contactForm/ContactForm';
 import SearchBox from '../../components/searchBox/SearchBox';
 
 export default function ContactsPage() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <>
       <DocumentTitle>Your contacts</DocumentTitle>
-      <ContactForm />
-      <SearchBox/>
-      {isLoading && <LoaderComponent />}
-      {error && <ErrorMessage />}
-      <ContactList />
+      {/* <ContactForm /> */}
+      {/* <SearchBox/> */}
+      {/* {isLoading && <LoaderComponent />}
+      {error && <ErrorMessage />} */}
+      {/* <ContactList /> */}
     </>
   );
 }

@@ -1,7 +1,9 @@
+// src/redux/auth/operations.js
+
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://vocab-builder-backend.p.goit.global/api';
 
 // Utility to add JWT
 const setAuthHeader = (token) => {
@@ -39,7 +41,7 @@ export const logIn = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post('/users/login', credentials);
+      const res = await axios.post('/users/signin', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
       return res.data;
@@ -55,7 +57,7 @@ export const logIn = createAsyncThunk(
  */
 export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
   try {
-    await axios.post('/users/logout');
+    await axios.post('/users/signout');
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
   } catch (error) {

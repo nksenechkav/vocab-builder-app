@@ -67,7 +67,6 @@ export const RegistrationForm = () => {
       onSubmit={handleSubmit}
       validationSchema={FeedbackSchema}
     >
-      {({ values }) => (
         <Form className={css.form} autoComplete="off">
           <p className={css['form-header']}>Register</p>
           <p className={css['form-text']}>
@@ -136,7 +135,6 @@ export const RegistrationForm = () => {
           </p>
           <Toaster />
         </Form>
-      )}
     </Formik>
   );
 };

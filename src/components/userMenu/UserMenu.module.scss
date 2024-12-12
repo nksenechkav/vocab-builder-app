@@ -1,91 +1,139 @@
-@media screen and (min-width: 375px){ 
-  .wrapper {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
-    gap: 5px;
-  }
-  
-  .username {
-    font-weight: 700;
-  }
+// @media screen and (min-width: 375px){ 
+//   .wrapper {
+//     text-align: right;
+//     display: flex;
+//     justify-content: flex-end;
+//     align-items: flex-end;
+//     gap: 5px;
+//     font-family: MacPawFixelDisplay;
+//   }
 
-  .btn {
-    width: 60px;
-    height: 30px;
-    display: block;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px;
-  }
+//   .userIcon {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 36px;
+//     height: 36px;
+//     border-radius: 50%;
+//     background-color: #808000; // Оливковый цвет
+//     color: #fff;
+//     font-size: 14px;
+//     font-weight: bold;
+//   }
   
-  .btn:hover {
-    background-color: #c82333;
-  }
-  }
+//   .username {
+//     font-weight: 700;
+//   }
 
-@media screen and (min-width: 768px){ 
-  .wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-  }
+//   .btn {
+//     width: 60px;
+//     height: 30px;
+//     display: block;
+//     background-color: #dc3545;
+//     color: #fff;
+//     border: none;
+//     padding: 5px 10px;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     font-size: 12px;
+//   }
   
-  .username {
-    font-weight: 700;
-  }
+//   .btn:hover {
+//     background-color: #c82333;
+//   }
+//   }
 
-  .btn {
-    width: 70px;
-    height: 30px;
-    display: block;
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
+// @media screen and (min-width: 768px){ 
+//   .wrapper {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 12px;
+//   }
   
-  .btn:hover {
-    background-color: #c82333;
-  }
-  }
+//   .username {
+//     font-weight: 700;
+//   }
+
+//   .btn {
+//     width: 70px;
+//     height: 30px;
+//     display: block;
+//     background-color: #dc3545;
+//     color: #fff;
+//     border: none;
+//     padding: 5px 10px;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     font-size: 14px;
+//   }
+  
+//   .btn:hover {
+//     background-color: #c82333;
+//   }
+//   }
 
 @media screen and (min-width: 1158px){ 
   .wrapper {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    font-family: MacPawFixelDisplay;
+    color: #121417;
   }
-  
+
+  .wrapper-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .userIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #85AA9F; // Оливковый цвет
+    color: #FCFCFC;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
   .username {
-    font-weight: 700;
+    color: #121417;
+    font-size: 20px;
+    font-weight: 500;
   }
 
   .btn {
-    width: 100px;
-    height: 40px;
-    display: block;
-    background-color: #dc3545;
-    color: #fff;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    width: 81px;
+    height: 24px;
+    color: #121417;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
   }
   
-  .btn:hover {
-    background-color: #c82333;
+  .icon-unique {
+    width: 16px;
+    height: 16px;
+    stroke: #121417;
+    position: absolute;
+    right: -20px; /* Выставить иконку за пределы кнопки */
+    top: 50%;
+    transform: translateY(-50%);
   }
-  }
+  
+}

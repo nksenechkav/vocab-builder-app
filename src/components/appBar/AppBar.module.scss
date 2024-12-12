@@ -28,14 +28,16 @@
   
   @media screen and (min-width: 1158px){
     .header {
+      font-family: MacPawFixelDisplay;
       width: 1240px;
       height: 48px;
+      background-color: #fff;
+      padding: 0;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       flex-wrap: nowrap;
-      background-color: #FFFFFF;
       font-size: 24px;
       font-weight: bold;
     }
@@ -70,9 +72,9 @@
     }
     
     .logo-text {
-      font-size: 1.5rem;
+      font-size: 24px;
       font-weight: bold;
-      color: #333;
+      color: #121417;
     }
     .menu {
       display: flex;
