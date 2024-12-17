@@ -48,24 +48,28 @@
    
    @media screen and (min-width: 1158px){ 
     .navigation {
+      width: 307px;
       display: flex;
       flex-direction: row;
+      gap: 28px;
       flex-wrap: nowrap;
+      font-family: MacPawFixelDisplay;
+      font-size: 16px;
     }
       .link {
         display: inline-block;
         text-decoration: none;
         padding: 12px;
         padding-left: 0;
-        font-weight: 700;
+        font-weight: 500;
         color: #2a363b;
       }
     
       .link:hover, .link:focus {
-        color: red;
+        color: #85AA9F;
       }
       
       .link.active {
-        color: #e84a5f;
+        color: #85AA9F;
       }
     }

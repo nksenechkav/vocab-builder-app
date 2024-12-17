@@ -8,24 +8,29 @@ import LoaderComponent from '../../components/loader/Loader';
 import ErrorMessage from '../../components/error/ErrorMessage';
 import ContactForm from '../../components/contactForm/ContactForm';
 import SearchBox from '../../components/searchBox/SearchBox';
+import css from './DictionaryPage.module.scss';
 
-export default function ContactsPage() {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
+export default function DictionaryPage() {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <>
-      <DocumentTitle>Your contacts</DocumentTitle>
-      {/* <ContactForm /> */}
-      {/* <SearchBox/> */}
-      {/* {isLoading && <LoaderComponent />}
-      {error && <ErrorMessage />} */}
-      {/* <ContactList /> */}
+      <DocumentTitle>Dictionary</DocumentTitle>
+      <div className={css.page}>
+         <div className={css.container}>
+         <ContactForm />
+            <SearchBox/>
+            {isLoading && <LoaderComponent />}
+            {error && <ErrorMessage />}
+            <ContactList />
+         </div>    
+      </div>   
     </>
   );
 }

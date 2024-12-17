@@ -20,7 +20,7 @@ export const AppBar = () => {
         </div>
       </Link>
       <div className={css.menu}>
-      {/* <Navigation className={css.navigation} /> */}
+      <Navigation className={css.navigation} />
       {isLoggedIn  && <UserMenu /> }
       </div>  
     </header>

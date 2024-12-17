@@ -10,7 +10,7 @@ import css from './App.module.scss';
 
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage/RegistrationPage'));
 const LoginPage = lazy(() => import('../../pages/LoginPage/LoginPage'));
-const ContactsPage = lazy(() => import('../../pages/ContactsPage/ContactsPage'));
+const DictionaryPage = lazy(() => import('../../pages/DictionaryPage/DictionaryPage'));
 
 const App = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const App = () => {
         <Route
           path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            <PrivateRoute redirectTo="/login" component={<DictionaryPage />} />
           }
         />
       </Routes>
