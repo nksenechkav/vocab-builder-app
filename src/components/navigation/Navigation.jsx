@@ -9,17 +9,17 @@ export const Navigation = () => {
   return (
     <nav className={css.navigation}>
       {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
+        <NavLink  className={({ isActive }) => (isActive ? `${css.link} ${css.active}` : css.link)} to="/words">
           Dictionary
         </NavLink>
       )}
       {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
+        <NavLink  className={({ isActive }) => (isActive ? `${css.link} ${css.active}` : css.link)} to="/words">
           Recommend
         </NavLink>
       )}
       {isLoggedIn && (
-        <NavLink className={css.link} to="/contacts">
+        <NavLink  className={({ isActive }) => (isActive ? `${css.link} ${css.active}` : css.link)} to="/words">
           Training
         </NavLink>
       )}

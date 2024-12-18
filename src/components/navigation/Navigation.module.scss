@@ -59,17 +59,14 @@
       .link {
         display: inline-block;
         text-decoration: none;
-        padding: 12px;
-        padding-left: 0;
-        font-weight: 500;
-        color: #2a363b;
+        background-color:transparent;
+        color: #121417;
       }
     
-      .link:hover, .link:focus {
-        color: #85AA9F;
-      }
-      
-      .link.active {
-        color: #85AA9F;
+      .active {
+        color:#FCFCFC;
+        padding: 12px 20px;
+        background-color:#85AA9F;
+        border-radius: 15%;
       }
     }
