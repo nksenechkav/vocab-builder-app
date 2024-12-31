@@ -51,22 +51,25 @@
       width: 307px;
       display: flex;
       flex-direction: row;
+      align-items: baseline;
       gap: 28px;
       flex-wrap: nowrap;
       font-family: MacPawFixelDisplay;
+      font-weight: 600;
       font-size: 16px;
     }
-      .link {
-        display: inline-block;
-        text-decoration: none;
-        background-color:transparent;
-        color: #121417;
-      }
     
-      .active {
-        color:#FCFCFC;
-        padding: 12px 20px;
-        background-color:#85AA9F;
-        border-radius: 15%;
-      }
+    .link {
+      display: inline-block;
+      text-decoration: none;
+      background-color: transparent;
+      color: #121417;
+    }
+    
+    .active {
+      color: #fcfcfc;
+      padding: 12px 20px;
+      background-color: #85aa9f;
+      border-radius: 15px;
+    }
     }
