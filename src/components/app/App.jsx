@@ -44,7 +44,7 @@ const App = () => {
           }
         />
         <Route
-          path="/contacts"
+          path="/dictionary"
           element={
             <PrivateRoute redirectTo="/login" component={<DictionaryPage />} />
           }

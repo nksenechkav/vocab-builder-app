@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchCategories } from './operations';
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -10,45 +10,63 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-const initialContacts = {
-    contacts: {
-		items: [],
-    isLoading: false,
-    error: null,
-	},
-}
+// const initialContacts = {
+//     contacts: {
+// 		items: [],
+//     isLoading: false,
+//     error: null,
+// 	},
+// }
 
 const contactsSlice = createSlice({
-  name: "contacts/items",
-  initialState: initialContacts,
-
+  name: "categories",
+  initialState: {
+    list: [],
+    isLoading: false,
+    error: null,
+  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchContacts.pending, handlePending)
-      .addCase(fetchContacts.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.contacts.items = action.payload;
-      })
-      .addCase(fetchContacts.rejected, handleRejected)
-      .addCase(addContact.pending, handlePending)
-      .addCase(addContact.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.contacts.items.push(action.payload);
-      })
-      .addCase(addContact.rejected, handleRejected)
-      .addCase(deleteContact.pending, handlePending)
-      .addCase(deleteContact.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        const index = state.contacts.items.findIndex(
-          (contact) => contact.id === action.payload.id
-        );
-        state.contacts.items.splice(index, 1);
-      })
-      .addCase(deleteContact.rejected, handleRejected)
-  }
+    .addCase(fetchCategories.pending, handlePending)
+        .addCase(fetchCategories.fulfilled, (state, action) => {
+          state.isLoading = false;
+          state.error = null;
+          state.list = action.payload;
+        })
+        .addCase(fetchCategories.rejected, handleRejected)
+  },
+
+  // name: "contacts/items",
+  // initialState: initialContacts,
+
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(fetchContacts.pending, handlePending)
+  //     .addCase(fetchContacts.fulfilled, (state, action) => {
+  //       state.isLoading = false;
+  //       state.error = null;
+  //       state.contacts.items = action.payload;
+  //     })
+  //     .addCase(fetchContacts.rejected, handleRejected)
+  //     .addCase(addContact.pending, handlePending)
+  //     .addCase(addContact.fulfilled, (state, action) => {
+  //       state.isLoading = false;
+  //       state.error = null;
+  //       state.contacts.items.push(action.payload);
+  //     })
+  //     .addCase(addContact.rejected, handleRejected)
+  //     .addCase(deleteContact.pending, handlePending)
+  //     .addCase(deleteContact.fulfilled, (state, action) => {
+  //       state.isLoading = false;
+  //       state.error = null;
+  //       const index = state.contacts.items.findIndex(
+  //         (contact) => contact.id === action.payload.id
+  //       );
+  //       state.contacts.items.splice(index, 1);
+  //     })
+  //     .addCase(deleteContact.rejected, handleRejected)
+  // }
 });
 
 export const contactsReducer = contactsSlice.reducer;
