@@ -1,5 +1,4 @@
-// src/components/LoginForm/LoginForm.jsx
-
+// src/components/loginForm/LoginForm.jsx
 
 import { logIn } from '../../redux/auth/operations';
 import { Formik, Form, Field } from 'formik';

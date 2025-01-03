@@ -1,33 +1,47 @@
 import { changeFilter } from '../../redux/filters/slice';
 import css from './SearchBox.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectNameFilter } from '../../redux/filters/selectors';
-import { selectCategories } from '../../redux/contacts/selectors';
+import { selectFilter } from '../../redux/filters/selectors';
+import { selectCategories } from '../../redux/words/selectors';
+import { fetchCategories } from '../../redux/words/operations';
+import { useEffect } from 'react';
+import { FaSearch } from 'react-icons/fa';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
 
-  const filter = useSelector(selectNameFilter);
+  const filter = useSelector(selectFilter);
   const categories = useSelector(selectCategories);
+  console.log(categories);
  
-  const handleChange = (e) => {
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, [dispatch]);
+
+  // Обробник зміни текстового поля
+  const handleInputChange = (e) => {
     const newValue = e.target.value;
-    dispatch(changeFilter(newValue));
+    dispatch(changeFilter({ type: 'word', value: newValue }));
   };
 
+  // Обробник зміни категорії
   const handleCategoryChange = (e) => {
     const newValue = e.target.value;
     dispatch(changeFilter({ type: 'category', value: newValue }));
   };
-  
+
   return (
     <div className={css.searchBox}>
-      <input className={css.searchField}
+       <div className={css.searchWrapper}>
+      <input
+        className={css.searchField}
         type="text"
-        placeholder='Find the word'
-        value={filter}
-        onChange={handleChange}
+        placeholder="Find the word"
+        value={filter.name || ''}
+        onChange={handleInputChange}
       />
+      <FaSearch className={css.searchIcon} /> {/* Иконка лупы */}
+    </div>
       <select
         className={css.categorySelect}
         onChange={handleCategoryChange}
@@ -40,7 +54,33 @@ const SearchBox = () => {
           </option>
         ))}
       </select>
+
+      {/* Рендеринг радіо-кнопок для "verb" */}
+      {filter.category === 'verb' && (
+        <div className={css.radioGroup}>
+          <label>
+            <input
+              type="radio"
+              name="verbType"
+              value="regular"
+              onChange={() => dispatch(changeFilter({ type: 'verbType', value: 'regular' }))}
+              checked={filter.verbType === 'regular'}
+            />
+            Regular
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="verbType"
+              value="irregular"
+              onChange={() => dispatch(changeFilter({ type: 'verbType', value: 'irregular' }))}
+              checked={filter.verbType === 'irregular'}
+            />
+            Irregular
+          </label>
+        </div>
+      )}
     </div>
   );
-}
+};
 export default SearchBox; 

@@ -1,3 +1,5 @@
+// src/components/loader/Loader.jsx
+
 import { Hearts } from 'react-loader-spinner'
 import css from './Loader.module.scss';
 

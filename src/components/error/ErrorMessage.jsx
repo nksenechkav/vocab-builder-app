@@ -1,3 +1,5 @@
+// src/components/error/ErrorMessage.jsx
+
 import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast('Whoops, something went wrong! Please try reloading this page!');

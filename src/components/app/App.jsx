@@ -1,3 +1,5 @@
+// src/components/app/App.jsx
+
 import { useEffect, lazy } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
@@ -28,19 +30,19 @@ const App = () => {
           <Route
             path="/"
             element={
-              <RestrictedRoute redirectTo="/words" component={<RegistrationPage />} />
+              <RestrictedRoute redirectTo="/dictionary" component={<RegistrationPage />} />
             }
           />
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/words" component={<RegistrationPage />} />
+            <RestrictedRoute redirectTo="/dictionary" component={<RegistrationPage />} />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/dictionary" component={<LoginPage />} />
           }
         />
         <Route
@@ -49,6 +51,16 @@ const App = () => {
             <PrivateRoute redirectTo="/login" component={<DictionaryPage />} />
           }
         />
+        {/* <Route
+          path="/recommend"
+          element={<PrivateRoute redirectTo="/login" component={<RecommendPage />} />
+          }
+        />
+        <Route
+          path="/training"
+          element={<PrivateRoute redirectTo="/login" component={<TrainingPage />} />
+          }
+        /> */}
       </Routes>
     </Layout>
 );

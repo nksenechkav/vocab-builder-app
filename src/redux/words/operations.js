@@ -1,6 +1,7 @@
+// src/redux/words/operations.js
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
 
 export const fetchCategories = createAsyncThunk(
   'categories/fetchCategories', 
@@ -14,11 +15,11 @@ export const fetchCategories = createAsyncThunk(
   }
 );
 
-export const fetchContacts = createAsyncThunk(
-  'contacts/fetchAll',
+export const fetchAllWords = createAsyncThunk(
+  'words/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get('/words');
+      const response = await axios.get('/words/all');
       return response.data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

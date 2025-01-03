@@ -56,18 +56,40 @@
     font-weight: 500;
     font-size: 16px;
   }
+
+  .searchWrapper {
+    position: relative; /* Чтобы иконка позиционировалась относительно поля ввода */
+  }
   
   .searchField {
+    width: 100%;
+    padding-left: 30px; /* Отступ для иконки */
+    padding-right: 10px;
+    background-color: transparent;
     width: 274px;
     height: 48px;
     border: 1px solid rgba(18, 20, 23, 0.1);
     border-radius: 15px;
     padding: 12px 24px;
   }
+  
+  .searchIcon {
+    position: absolute;
+    left: 10px; /* Позиция иконки слева */
+    top: 50%;
+    transform: translateY(-50%); /* Центрируем иконку по вертикали */
+    font-size: 16px;
+    color: #888;
+  }
 
   .categorySelect {
     padding: 8px;
     font-size: 16px;
+  }
+
+  .radioGroup {
+    display: flex;
+    gap: 10px;
   }
   
 }

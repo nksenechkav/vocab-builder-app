@@ -1,4 +1,4 @@
-// src/redux/userMenu/UserMenu.jsx
+// src/components/userMenu/UserMenu.jsx
 
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from '../../redux/auth/operations';

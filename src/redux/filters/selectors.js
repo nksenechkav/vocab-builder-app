@@ -1,11 +1,11 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { selectContacts } from "../contacts/selectors";
+import { selectAllWords } from "../words/selectors";
 
-export const selectNameFilter = (state) => state.filters.filters.name;
+export const selectFilter = (state) => state.filters;
 
-export const selectFilteredContacts = createSelector([selectContacts, selectNameFilter], 
-    (contacts, filter) => {
-    return contacts.filter(contact =>
-           contact.name.toLowerCase().includes(filter)
+export const selectFilteredWords = createSelector([selectAllWords, selectFilter], 
+    (words, filter) => {
+    return words.filter(word =>
+           word.toLowerCase().includes(filter)
     );
 });
