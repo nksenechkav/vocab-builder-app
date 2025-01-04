@@ -85,8 +85,30 @@
   }
 
   .categorySelect {
-    padding: 8px;
+    background-color: transparent;
+    border: 1px solid rgba(18, 20, 23, 0.1);
+    border-radius: 15px;
+    padding: 12px 24px;
     font-size: 16px;
+  }
+
+  .categorySelect {
+    appearance: none; /* Убирает стандартную стрелку */
+    -webkit-appearance: none; /* Для WebKit-браузеров */
+    -moz-appearance: none; /* Для Firefox */
+  }
+
+  .category-wrapper {
+    position: relative; /* Чтобы иконка позиционировалась относительно поля ввода */
+  }
+
+  .icon-toggle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .radioGroup {

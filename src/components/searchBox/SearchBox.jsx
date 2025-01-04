@@ -30,7 +30,7 @@ const SearchBox = () => {
 
   return (
     <div className={css.searchBox}>
-       <div className={css.searchWrapper}>
+      <div className={css.searchWrapper}>
       <input
         className={css.searchField}
         type="text"
@@ -42,6 +42,7 @@ const SearchBox = () => {
       <use xlinkHref="/icons.svg#icon-search"></use>
       </svg>
     </div>
+    <div className={css['category-wrapper']}>
       <select
         className={css.categorySelect}
         onChange={handleCategoryChange}
@@ -54,7 +55,10 @@ const SearchBox = () => {
           </option>
         ))}
       </select>
-
+      <svg className={css['icon-toggle']}>
+      <use xlinkHref="/icons.svg#icon-d-mpr-toggle-2"></use>
+      </svg>
+      </div>
       {/* Рендеринг радіо-кнопок для "verb" */}
       {filter.category === 'verb' && (
         <div className={css.radioGroup}>
