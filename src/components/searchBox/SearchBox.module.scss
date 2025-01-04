@@ -73,13 +73,15 @@
     padding: 12px 24px;
   }
   
-  .searchIcon {
+  .icon-search {
+    width: 20px;
+    height: 20px;
     position: absolute;
-    left: 10px; /* Позиция иконки слева */
+    right: 24px;
     top: 50%;
-    transform: translateY(-50%); /* Центрируем иконку по вертикали */
-    font-size: 16px;
-    color: #888;
+    transform: translateY(-50%);
+    stroke: #121417;
+    fill: none;
   }
 
   .categorySelect {

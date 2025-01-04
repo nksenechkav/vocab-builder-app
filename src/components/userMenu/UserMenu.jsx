@@ -21,7 +21,7 @@ export const UserMenu = () => {
       <button className={css.btn} type="button" onClick={() => dispatch(logOut())}>
         Logout
         <svg className={css['icon-unique']} >
-         <use xlinkHref="/icons.svg#icon-arrow" />
+         <use xlinkHref="/icons.svg#icon-arrow"></use>
         </svg>
       </button>
     </div>

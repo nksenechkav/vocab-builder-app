@@ -5,14 +5,12 @@ import { selectFilter } from '../../redux/filters/selectors';
 import { selectCategories } from '../../redux/words/selectors';
 import { fetchCategories } from '../../redux/words/operations';
 import { useEffect } from 'react';
-import { FaSearch } from 'react-icons/fa';
 
 const SearchBox = () => {
   const dispatch = useDispatch();
 
   const filter = useSelector(selectFilter);
   const categories = useSelector(selectCategories);
-  console.log(categories);
  
   useEffect(() => {
     dispatch(fetchCategories());
@@ -40,7 +38,9 @@ const SearchBox = () => {
         value={filter.name || ''}
         onChange={handleInputChange}
       />
-      <FaSearch className={css.searchIcon} /> {/* Иконка лупы */}
+      <svg className={css['icon-search']}>
+      <use xlinkHref="/icons.svg#icon-search"></use>
+      </svg>
     </div>
       <select
         className={css.categorySelect}
