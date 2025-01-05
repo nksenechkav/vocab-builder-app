@@ -23,15 +23,15 @@ export default function DictionaryPage() {
   return (
     <>
       <DocumentTitle>Dictionary</DocumentTitle>
-      <div className={css.page}>
-         <div className={css.container}>
+      {/* <div className={css.page}> */}
+         <div className={css['container-dictionary']}>
          {/* <ContactForm /> */}
             <SearchBox/>
             {isLoading && <LoaderComponent />}
             {error && <ErrorMessage />}
             {/* <ContactList /> */}
          </div>    
-      </div>   
+      {/* </div>    */}
     </>
   );
 }
