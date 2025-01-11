@@ -58,7 +58,7 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
     }
     
     .icon {
@@ -74,11 +74,5 @@
       font-size: 24px;
       font-weight: bold;
       color: #121417;
-    }
-    .menu {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 92px;
     }
   }

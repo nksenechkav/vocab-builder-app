@@ -20,10 +20,8 @@ export const AppBar = () => {
           <span className={css['logo-text']}>VocabBuilder</span>
         </div>
       </Link>
-      <div className={css.menu}>
       <Navigation className={css.navigation} />
       {isLoggedIn  && <UserMenu /> }
-      </div>  
     </header>
   );
 };

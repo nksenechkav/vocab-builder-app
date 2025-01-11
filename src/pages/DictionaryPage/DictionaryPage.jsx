@@ -8,8 +8,8 @@ import { selectWordsIsLoading, selectWordsError } from '../../redux/words/select
 import LoaderComponent from '../../components/loader/Loader';
 import ErrorMessage from '../../components/error/ErrorMessage';
 // import ContactForm from '../../components/contactForm/ContactForm';
-import SearchBox from '../../components/searchBox/SearchBox';
 import css from './DictionaryPage.module.scss';
+import { Dashboard } from '../../components/dashboard/Dashboard';
 
 export default function DictionaryPage() {
   // const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function DictionaryPage() {
       {/* <div className={css.page}> */}
          <div className={css['container-dictionary']}>
          {/* <ContactForm /> */}
-            <SearchBox/>
+            <Dashboard/>
             {isLoading && <LoaderComponent />}
             {error && <ErrorMessage />}
             {/* <ContactList /> */}
