@@ -1,0 +1,134 @@
+// @media screen and (min-width: 375px){ 
+//   .contact-list {
+//   width: 290px;
+//   margin-left: 20px;
+//   list-style-type: none;
+//   height: 70px;
+//   overflow: hidden;
+//   overflow-y: scroll;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+// }
+// }
+
+
+// @media screen and (min-width: 768px){ 
+//   .contact-list {
+//   width: 440px;
+//   margin-left: 165px;
+//   list-style-type: none;
+//   height: 500px;
+//   overflow: hidden;
+//   overflow-y: scroll;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+// }
+// }
+
+@media screen and (min-width: 1158px) {
+  .words-table-container {
+    width: 1240px;
+    min-height: 640px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    font-family: MacPawFixelDisplay;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  .words-table {
+    width: 1204px;
+    height: 604px;
+    border-collapse: collapse;
+    border-radius: 15px;
+    border: 1px solid #dbdbdb;
+    background-color: #FCFCFC;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    table-layout: fixed;
+  }
+  
+  .table-header {
+    background-color: rgba(133, 170, 159, 0.1);
+    min-height: 72px;
+    width: auto;
+  }
+  
+  .words-row-header {
+    border: 1px solid #dbdbdb;
+    padding: 22px;
+    text-align: left;
+    min-height: 72px;
+    font-weight: 500;
+  }
+  
+  .words-row {
+    border: 1px solid #dbdbdb;
+    padding: 22px;
+    min-height: 72px;
+  }
+
+  .words-row:last-child {
+    text-align: center;
+    max-width: 136px;
+  }
+
+  .header-with-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .progress-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между текстом и кругом */
+  }
+  
+  .progress-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #121417;
+  }
+  
+  .progress-circle {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-svg {
+    transform: rotate(-90deg); /* Поворачиваем круг для правильного направления заполнения */
+  }
+  
+  .progress-bg {
+    stroke-linecap: round; /* Закруглённые концы для внешнего круга */
+  }
+  
+  .progress-fill {
+    stroke-linecap: round; /* Закруглённые концы для заполнения */
+    transition: stroke-dashoffset 0.4s ease; /* Плавная анимация заполнения */
+  }  
+  
+  
+  .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+}
