@@ -162,7 +162,7 @@ const WordsTable = ({ words }) => {
             return (
               <tr {...row.getRowProps()} className={css["table-row"]}>
                 {row.cells.map((cell) => (
-                  <td {...cell.getCellProps()} className={css["words-row"]}>
+                  <td {...cell.getCellProps()} className={css["words-row"]} >
                     {cell.render("Cell")}
                   </td>
                 ))}
