@@ -12,17 +12,20 @@ import ErrorMessage from '../../components/error/ErrorMessage';
 import css from './DictionaryPage.module.scss';
 import { Dashboard } from '../../components/dashboard/Dashboard';
 import WordsTable from '../../components/wordsTable/WordsTable';
+import WordsPagination from '../../components/wordsPagination/WordsPagination';
+import { useEffect, useState } from 'react';
 
 export default function DictionaryPage() {
   // const dispatch = useDispatch();
   const isLoading = useSelector(selectWordsIsLoading);
   const error = useSelector(selectWordsError);
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  const [wordsData, setWordsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageSize = 10;
 
-  const wordsData = [
+  const fetchWords = async (page, size) => {
+  const data = [
     { word: "a little bit", translation: "трохи, трішки", category: "Phrasal verb", progress: 50 },
     { word: "Break in", translation: "Вмішуватися, встрявати", category: "Phrasal verb", progress: 100 },
     { word: "Care", translation: "Турбота, догляд", category: "Verb", progress: 100 },
@@ -31,7 +34,15 @@ export default function DictionaryPage() {
     { word: "Phone", translation: "Телефон", category: "Noun", progress: 50 },
     { word: "Shoes", translation: "Взуття", category: "Noun", progress: 50 },
   ];
-  
+  setWordsData(data.slice((page - 1) * size, page * size)); // Simulate paginated data
+};
+
+// Fetch words when the page changes
+useEffect(() => {
+  fetchWords(currentPage, pageSize);
+}, [currentPage]);
+
+const totalPages = Math.ceil(wordsData.length / pageSize); // Adjust total pages if necessary
 
   return (
     <>
@@ -42,7 +53,13 @@ export default function DictionaryPage() {
             <Dashboard/>
             {isLoading && <LoaderComponent />}
             {error && <ErrorMessage />}
-            <WordsTable  words={wordsData} />
+            <WordsTable words={wordsData} />
+            <WordsPagination
+            fetchData={setCurrentPage}  // Pass the function to update the page number
+            currentPage={currentPage}
+            pageSize={pageSize}
+            totalPages={totalPages}
+          />
          </div>    
       </div>   
     </>
