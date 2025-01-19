@@ -28,47 +28,58 @@
 // }
 
 @media screen and (min-width: 1158px) {
-  .pagination-panel {
+  .pagination-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 368px;
-    height: 32px;
-    font-family: Arial, sans-serif;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    gap: 10px; /* Space between buttons */
+    font-family: MacPawFixelDisplay;
   }
   
   .pagination-button {
-    padding: 5px 10px;
-    font-size: 14px;
-    border: none;
-    background-color: #fff;
-    color: #007bff;
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    background-color: transparent; /* Keep background transparent by default */
+    color: #121417;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    border-radius: 4px;
-    margin: 0 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
   }
   
   .pagination-button:disabled {
-    background-color: #ddd;
-    color: #888;
+    color: #121417;
+    border: 1px solid #dbdbdb;
     cursor: not-allowed;
   }
   
-  .pagination-button.active {
-    background-color: #007bff;
+  .pagination-button.active-page {
+    background-color: #85AA9F; /* Active page number button gets the background color */
     color: white;
+  }
+  
+  .pagination-button.active-arrow .icon-arrow {
+    color: #85AA9F; /* Active arrow buttons will change arrow color only */
   }
   
   .pagination-button:hover:not(:disabled) {
     background-color: #e2e6ea;
+    color: #121417;
   }
   
-  .pagination-button:last-child {
-    margin-right: 0;
+  .icon-arrow {
+    width: 16px;
+    height: 16px;
+    color: #121417; /* Default color for arrows */
+  }
+  
+  .pagination-button:focus {
+    outline: none;
   }
   
   
