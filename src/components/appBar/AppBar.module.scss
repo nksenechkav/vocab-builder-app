@@ -29,16 +29,16 @@
   @media screen and (min-width: 1158px){
     .header {
       font-family: MacPawFixelDisplay;
-      width: 1440px;
+      width: 1240px;
       height: 88px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       background-color: #fff;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       flex-wrap: nowrap;
-      padding: 20px 100px;
-      margin: 0 auto;
     }
   
     .logo {

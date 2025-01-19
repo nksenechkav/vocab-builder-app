@@ -34,7 +34,6 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    border: none;
     border-radius: 15px;
     font-family: MacPawFixelDisplay;
     font-size: 20px;
@@ -46,9 +45,9 @@
     height: 604px;
     border-collapse: collapse;
     border-radius: 15px;
-    border: 1px solid #dbdbdb;
     background-color: #FCFCFC;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
   }
   
   .table-header {
@@ -57,31 +56,29 @@
   }
   
   .words-row-header {
-    border: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
     padding: 22px;
     text-align: left;
     height: 72px;
     font-weight: 500;
   }
-  
-  .words-row {
-    border: 1px solid #dbdbdb;
-    padding: 22px;
-    height: 72px;
-  }
 
   .words-row-header:nth-child(1){
+    border-right: 1px solid #dbdbdb;
     width: 280px;
   }
 
   .words-row-header:nth-child(4){
+    border-right: 1px solid #dbdbdb;
     width: 254px;
   }
   .words-row-header:nth-child(3){
+    border-right: 1px solid #dbdbdb;
     width: 260px;
   }
 
   .words-row-header:nth-child(2){
+    border-right: 1px solid #dbdbdb;
     width: 274px;
   }
 
@@ -89,8 +86,50 @@
     width: 136px;
   }
 
+  .words-row {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 22px;
+    height: 72px;
+  }
+
+  .words-row:nth-child(1){
+    border-right: 1px solid #dbdbdb;
+  }
+
+  .words-row:nth-child(4){
+    border-right: 1px solid #dbdbdb;
+  }
+  .words-row:nth-child(3){
+    border-right: 1px solid #dbdbdb;
+  }
+
+  .words-row:nth-child(2){
+    border-right: 1px solid #dbdbdb;
+  }
+
   .words-row:last-child {
     text-align: center;
+  }
+  .table-header .words-row-header:nth-child(1) {
+    border-top-left-radius: 10px;
+    border-top: none;
+  }
+
+  .table-header .words-row-header:last-child {
+    border-top-right-radius: 10px;
+    border-top: none;
+  }
+
+  .table-row:last-child .words-row:last-child {
+    border-bottom-right-radius: 10px;
+  }
+
+  .table-row:last-child .words-row:nth-child(1) {
+    border-bottom-left-radius: 10px;
+  }
+
+  .table-row:last-child .words-row {
+    border-bottom: none;
   }
 
   .header-with-icon {

@@ -32,18 +32,16 @@
 //       }
     
     @media screen and (min-width: 1158px){
-    //   .page {
-    //     width: 1440px;
-    //     height: 992px;
-    //     background-color: rgba(18, 20, 23, 0.1);
-    //     margin: 0 auto;
-    //     display: flex;
-    //     justify-content: center;
-    // }
+      .page {
+        width: 1440px;
+        padding-left: 100px;
+        padding-right: 100px;
+        height: 904px;
+        background-color: #F8F8F8;
+    }
 
       .container-dictionary {
-        width: 1440px;
-        padding: 0 100px;
+        width: 1240px;
         height: 776px;
         display: flex;
         flex-direction: column;

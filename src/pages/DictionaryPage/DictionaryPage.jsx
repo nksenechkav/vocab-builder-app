@@ -36,7 +36,7 @@ export default function DictionaryPage() {
   return (
     <>
       <DocumentTitle>Dictionary</DocumentTitle>
-      {/* <div className={css.page}> */}
+      <div className={css.page}>
          <div className={css['container-dictionary']}>
          {/* <ContactForm /> */}
             <Dashboard/>
@@ -44,7 +44,7 @@ export default function DictionaryPage() {
             {error && <ErrorMessage />}
             <WordsTable  words={wordsData} />
          </div>    
-      {/* </div>    */}
+      </div>   
     </>
   );
 }
