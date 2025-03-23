@@ -2,13 +2,15 @@
 
 import React from "react";
 import { useTable } from "react-table";
-import { Tooltip, Popover, Typography } from "@mui/material";
+import { Tooltip, Popover, Typography, Button } from "@mui/material";
 import { useState } from "react";
 import css from "./WordsTable.module.scss";
 
 const WordsTable = ({ words }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [popoverContent, setPopoverContent] = useState("");
+  const [actionAnchorEl, setActionAnchorEl] = useState(null);
+  const [selectedWord, setSelectedWord] = useState(null);
 
   const handlePopoverOpen = (event, content) => {
     setAnchorEl(event.currentTarget);
@@ -24,9 +26,24 @@ const WordsTable = ({ words }) => {
 
   const open = Boolean(anchorEl);
 
-  const handleMenuClick = (word) => {
-    console.log(`Menu clicked for word: ${word}`);
-    // Дополнительная логика для меню
+  const handleMenuClick = (event, word) => {
+    setActionAnchorEl(event.currentTarget);
+    setSelectedWord(word);
+  };
+
+  const handleMenuClose = () => {
+    setActionAnchorEl(null);
+    setSelectedWord(null);
+  };
+
+  const handleEdit = () => {
+    console.log(`Edit clicked for word: ${selectedWord}`);
+    handleMenuClose();
+  };
+
+  const handleDelete = () => {
+    console.log(`Delete clicked for word: ${selectedWord}`);
+    handleMenuClose();
   };
 
   const columns = React.useMemo(
@@ -121,11 +138,11 @@ const WordsTable = ({ words }) => {
         accessor: "actions",
         Cell: ({ row }) => (
           <button
-            onClick={() => handleMenuClick(row.original.word)}
-            className={css["menu-button"]}
-          >
-            ...
-          </button>
+          onClick={(event) => handleMenuClick(event, row.original.word)}
+          className={css["menu-button"]}
+        >
+          ...
+        </button>
         ),
       },
     ],
@@ -173,19 +190,40 @@ const WordsTable = ({ words }) => {
       </table>
 
       <Popover
-        open={open}
-        anchorEl={anchorEl}
-        onClose={handlePopoverClose}
-        anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "center",
-        }}
-        transformOrigin={{
-          vertical: "top",
-          horizontal: "center",
-        }}
+        open={Boolean(actionAnchorEl)}
+        anchorEl={actionAnchorEl}
+        onClose={handleMenuClose}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        transformOrigin={{ vertical: "top", horizontal: "center" }}
       >
-        <Typography sx={{ p: 2 }}>{popoverContent}</Typography>
+        <div className={css["popover-content"]}>
+          <Button className={css["popover-button"]} onClick={handleEdit} color="primary">
+          <svg
+              id="icon-edit"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              xmlns="http://www.w3.org/2000/svg"
+              className={css["popover-icon"]}
+            >
+              <use xlinkHref="/icons.svg#icon-edit" />
+            </svg> 
+            <p className={css["popover-text"]}>Edit</p>
+            </Button>
+          <Button className={css["popover-button"]} onClick={handleDelete} color="secondary">
+          <svg
+              id="icon-trash"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              xmlns="http://www.w3.org/2000/svg"
+              className={css["popover-icon"]}
+            >
+              <use xlinkHref="/icons.svg#icon-trash" />
+            </svg> 
+            <p className={css["popover-text"]}>Delete</p>
+          </Button>
+        </div>
       </Popover>
     </div>
   );
